@@ -42,5 +42,9 @@ WORKDIR /mnt/aosp
 
 COPY utils/docker_entrypoint.sh /root/docker_entrypoint.sh
 COPY utils/aosp_bashrc.sh /root/aosp_bashrc.sh
+RUN mkdir -p /root/aosp
+COPY utils/aosp/.bash_logout /root/aosp
+COPY utils/aosp/.bashrc /root/aosp
+COPY utils/aosp/.profile /root/aosp
 RUN chmod +x /root/docker_entrypoint.sh
 #ENTRYPOINT ["/root/docker_entrypoint.sh"]
