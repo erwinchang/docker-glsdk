@@ -28,15 +28,12 @@ else
 fi
 
 
-[ ! -f /home/aosp/.gitconfig ] && {
-    cp /root/.gitconfig /home/aosp/.gitconfig
-    chown aosp:aosp /home/aosp/.gitconfig
-}
-[ ! -f /home/aosp/aosp_bashrc.sh ] && {
-    cp /root/aosp_bashrc.sh /home/aosp/aosp_bashrc.sh
-    chown aosp:aosp /home/aosp/aosp_bashrc.sh
-    chmod +x /home/aosp/aosp_bashrc.sh
-}
+cp /root/.gitconfig /home/aosp/.gitconfig
+chown aosp:aosp /home/aosp/.gitconfig
+
+cp /root/aosp_bashrc.sh /home/aosp/aosp_bashrc.sh
+chown aosp:aosp /home/aosp/aosp_bashrc.sh
+chmod +x /home/aosp/aosp_bashrc.sh
 
 
 #if chk is empty then return value is 1 ($? is 1)
