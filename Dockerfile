@@ -22,7 +22,9 @@ RUN echo "APT::Install-Recommends 0;" >> /etc/apt/apt.conf.d/01norecommends \
  && apt-get install -y xinetd tftpd nfs-kernel-server minicom build-essential libncurses5-dev uboot-mkimage autoconf automake python git diffstat texinfo gawk chrpath subversion dos2unix m2crypto lzop \
  && apt-get install -y locales \
 #fix kernel build fail
- && apt-get install -y bc
+ && apt-get install -y bc \
+#fix build sgx fail
+ && apt-get install -y file
 # 32bit lib
 RUN apt-get install -y acl bluez bluez-alsa:i386 dbus dbus-x11 dconf-gsettings-backend dconf-service gconf-service gconf-service-backend gconf2 gconf2-common glib-networking:i386 \
                        glib-networking-common glib-networking-services gsettings-desktop-schemas gstreamer0.10-plugins-base:i386 gstreamer0.10-plugins-good:i386 gtk2-engines:i386 \
